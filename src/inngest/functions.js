@@ -1,4 +1,5 @@
 import { inngest } from "./client";
+import { gemini, createAgent } from "@inngest/agent-kit";
 
 export const processTask = inngest.createFunction(
 	{
@@ -6,18 +7,14 @@ export const processTask = inngest.createFunction(
 		triggers: { event: "app/task.created" },
 	},
 	async ({ event, step }) => {
-		const result = await step.run("handle-task", async () => {
-			return {
-				processed: true,
-				id: event.data.id,
-			};
+		const helloAgent = createAgent({
+			name: "hello-agent",
+			description: "A simple agent",
+			system: "You are a helpful assisstant",
+			model: gemini({ model: "gemini-2.0-flash" }),
 		});
 
-		await step.sleep("pause", "1s");
-
-		return {
-			message: `Task ${event.data.id} complete`,
-			result,
-		};
+		const { output } = await helloAgent.run("Say hello to user");
+		return { message: output[0].content };
 	},
 );
