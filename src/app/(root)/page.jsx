@@ -1,5 +1,29 @@
-import { UserButton } from "@clerk/nextjs";
+import ProjectsForm from "@/modules/home/components/project-form";
+import ProjectList from "@/modules/home/components/project-list";
+import React from "react";
 
-export default function Home() {
-	return <UserButton />;
-}
+const Page = () => {
+	return (
+		<div className="flex items-center justify-center w-full px-4 py-8">
+			<div className="max-w-5xl w-full">
+				<section className="space-y-8 flex flex-col items-center">
+					<div className="flex flex-col items-center">BUILDX</div>
+					<h1 className="text-2xl md:text-5xl font-bold text-center">
+						Build Something with 💓
+					</h1>
+
+					<p className="text-lg md:text-xl text-muted-foreground text-center">
+						Create apps and websites by chatting with AI
+					</p>
+
+					<div className="max-w-3xl w-full">
+						{/* <ProjectsForm /> */}
+					</div>
+					{/* <ProjectList /> */}
+				</section>
+			</div>
+		</div>
+	);
+};
+
+export default Page;
