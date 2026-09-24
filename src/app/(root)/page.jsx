@@ -17,9 +17,9 @@ const Page = () => {
 					</p>
 
 					<div className="max-w-3xl w-full">
-						{/* <ProjectsForm /> */}
+						<ProjectsForm />
 					</div>
-					{/* <ProjectList /> */}
+					<ProjectList />
 				</section>
 			</div>
 		</div>
