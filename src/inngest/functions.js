@@ -9,9 +9,9 @@ import {
 } from "@inngest/agent-kit";
 import z from "zod";
 import db from "@/lib/db";
-import { MessageRole, MessageType } from "@prisma/client";
 import { FRAGMENT_TITLE_PROMPT, PROMPT, RESPONSE_PROMPT } from "@/prompt";
 import { lastAssistantTextMessageContent } from "./utils";
+import { MessageRole, MessageType } from "@prisma/client";
 
 export const codeAgentFunction = inngest.createFunction(
 	{
@@ -278,7 +278,7 @@ export const codeAgentFunction = inngest.createFunction(
 					data: {
 						projectId: event.data.projectId,
 						content: "Something went wrong. Please try again.",
-						role: MessageScroller.ASSISTANT,
+						role: MessageRole.ASSISTANT,
 						type: MessageType.ERROR,
 					},
 				});
