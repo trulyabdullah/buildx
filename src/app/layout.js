@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/toast";
+import { QueryProvider } from "@/components/query-provider";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -33,11 +34,14 @@ export default function RootLayout({ children }) {
 					enableSystem
 					disableTransitionOnChange
 				>
-					<ClerkProvider>
-						<header className="flex justify-end items-center p-4 gap-4 h-16"></header>
+					<QueryProvider>
 						<Toaster />
-						{children}
-					</ClerkProvider>
+						<ClerkProvider>
+							<header className="flex justify-end items-center p-4 gap-4 h-16"></header>
+							<Toaster />
+							{children}
+						</ClerkProvider>
+					</QueryProvider>
 				</ThemeProvider>
 			</body>
 		</html>
