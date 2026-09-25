@@ -38,7 +38,7 @@ const ProjectHeader = ({ projectId }) => {
 						variant={"ghost"}
 						size={"sm"}
 						className={
-							"focus-visible:ring-0 hover:bg-transparent hover:opacity-75 transition-opacity !pl-2"
+							"focus-visible:ring-0 hover:bg-transparent hover:opacity-75 transition-opacity pl-2!"
 						}
 					>
 						<Image
