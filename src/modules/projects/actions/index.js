@@ -58,7 +58,7 @@ export const getProjects = async () => {
 
 	if (!user) throw new Error("Unauthorized");
 
-	const projects = db.projects.findMany({
+	const projects = db.project.findMany({
 		where: {
 			userId: user.id,
 		},

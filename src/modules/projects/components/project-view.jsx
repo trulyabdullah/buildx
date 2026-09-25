@@ -14,6 +14,7 @@ import { Code, CrownIcon, EyeIcon } from "lucide-react";
 import ProjectHeader from "./project-header";
 import FragmentWeb from "./fragment-web";
 import { FileExplorer } from "./file-explorer";
+import { useGetProjectById } from "../hooks/project";
 
 const ProjectView = ({ projectId }) => {
 	const [activeFragment, setActiveFragment] = useState(null);

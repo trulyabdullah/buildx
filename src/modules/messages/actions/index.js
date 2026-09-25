@@ -56,7 +56,7 @@ export const createMessages = async (value, projectId) => {
 	return newMessage;
 };
 
-export const messaggetMessages = async (projectId) => {
+export const getMessages = async (projectId) => {
 	const user = await getCurrentUser();
 
 	if (!user) throw new Error("Unauthorized");

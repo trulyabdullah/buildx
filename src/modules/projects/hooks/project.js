@@ -11,12 +11,12 @@ export const useGetProjects = () => {
 export const useCreateProject = () => {
 	const queryClient = useQueryClient();
 	return useMutation({
-		mutationfn: (value) => createProject(value),
+		mutationFn: (value) => createProject(value),
 		onSuccess: () => queryClient.invalidateQueries(["projects", "status"]),
 	});
 };
 
-export const useGetProject = () => {
+export const useGetProjectById = (projectId) => {
 	return useQuery({
 		queryKey: ["project", projectId],
 		queryFn: () => getProjectById(projectId),

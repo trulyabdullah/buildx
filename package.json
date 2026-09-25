@@ -14,6 +14,7 @@
     "@clerk/themes": "^2.4.57",
     "@hookform/resolvers": "^5.9.1",
     "@inngest/agent-kit": "^0.13.2",
+    "@inngest/ai": "^0.1.8",
     "@prisma/client": "^6.19.3",
     "@shadcn/react": "^0.3.1",
     "@tanstack/react-query": "^5.103.2",
@@ -49,6 +50,7 @@
     "babel-plugin-react-compiler": "1.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.3.6",
+    "patch-package": "^8.0.1",
     "prisma": "^6.19.3",
     "tailwindcss": "^4"
   }

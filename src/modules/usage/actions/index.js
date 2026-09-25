@@ -1,8 +1,7 @@
 "use server";
 
 import { DURATION, FREE_POINTS, getUsageStatus, PRO_POINTS } from "@/lib/usage";
-import { auth } from "@clerk/nextjs";
-
+import { auth } from "@clerk/nextjs/server";
 export const status = async () => {
 	try {
 		const { userId } = await auth();
