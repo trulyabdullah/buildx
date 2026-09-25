@@ -221,14 +221,14 @@ export const codeAgentFunction = inngest.createFunction(
 			name: "fragment-title-generator",
 			description: "Generate a title for the fragment",
 			system: FRAGMENT_TITLE_PROMPT,
-			model: gemini({ model: "gemini-2.5-flash" }),
+			model: gemini({ model: "gemini-3.5-flash" }),
 		});
 
 		const responseGenerator = createAgent({
 			name: "response-generator",
 			description: "Generate a response for the fragment",
 			system: RESPONSE_PROMPT,
-			model: gemini({ model: "gemini-2.5-flash" }),
+			model: gemini({ model: "gemini-3.5-flash" }),
 		});
 
 		const { output: fragmentTitleOutput } =
