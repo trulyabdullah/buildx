@@ -273,7 +273,7 @@ export const codeAgentFunction = inngest.createFunction(
 		});
 
 		await step.run("save-result", async () => {
-			if (isError)
+			if (isError) {
 				return await db.message.create({
 					data: {
 						projectId: event.data.projectId,
@@ -282,6 +282,7 @@ export const codeAgentFunction = inngest.createFunction(
 						type: MessageType.ERROR,
 					},
 				});
+			}
 
 			return await db.message.create({
 				data: {
